@@ -1,0 +1,15 @@
+[{
+	"firstName": "Johnny",
+	"lastName": "Cage",
+	"profession":"Movie Star"
+},
+{
+	"firstName": "Jackson",
+	"lastName": "Briggs",
+	"profession":"Police Officer"
+},
+{
+	"firstName": "Shang",
+	"lastName": "Tsung",
+	"profession":"Wizard"
+}]

@@ -64,14 +64,27 @@ angular.module('robo')
 
 angular.module('robo')
 .controller('roboCtrl', [ 'Restangular', '$scope', function ( Restangular, $scope) {
- var limited = 15;
-$scope.limit = limited;
-$scope.addTo = function(){
-	$scope.limit += limited;
-};
-$scope.takeFrom = function(){
-	$scope.limit -= limited;
-};
+ // var limited = 15;
+// $scope.limit = limited;
+// $scope.addTo = function(){
+// 	$scope.limit += limited;
+// };
+// $scope.takeFrom = function(){
+// 	if(limited > 0){
+// 	$scope.limit -= limited;
+// };
+
+	$scope.loadAmount = 15;
+
+	$scope.loadMore = function(){
+		$scope.loadAmount = $scope.loadAmount + 15;
+	}
+
+	$scope.loadLess = function(){
+		if($scope.loadAmount >= 15)
+		$scope.loadAmount = $scope.loadAmount - 15;
+	}
+
    // console.log(roboFactory);
   //  console.log($scope.data);
 	console.log("roboCtrl loaded")

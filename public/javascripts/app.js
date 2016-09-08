@@ -9,7 +9,7 @@ angular.module('robo', [
 
 angular.module('robo')
 .config(function(RestangularProvider){
-		RestangularProvider.setBaseUrl('http://localhost:3000/');
+		RestangularProvider.setBaseUrl('http://jsonplaceholder.typicode.com/');
 	});
 
 angular.module('robo')
@@ -68,9 +68,9 @@ angular.module('robo')
    // console.log(roboFactory);
   //  console.log($scope.data);
 	console.log("roboCtrl loaded")
-	Restangular.all('users').getList().then(function(result){
+	Restangular.all('posts').getList().then(function(result){
 		//console.log(result);
-		$scope.users = result;
+		$scope.posts = result;
 	});
 	
 

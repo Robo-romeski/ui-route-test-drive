@@ -3,18 +3,25 @@
 console.log('init point for angular script');
 
 //console.log(angular)
-angular.module('robo', ['ui.router']);
+angular.module('robo', [
+	'ui.router','restangular']);
+
+
+angular.module('robo')
+.config(function(RestangularProvider){
+		RestangularProvider.setBaseUrl('http://localhost:3000/');
+	});
 
 angular.module('robo')
 .run(function(){
 	console.log("running")
 })
-
 angular.module('robo')
 	.factory('roboFactory', roboFactory)
 
 	//roboFactory.$inject = ['$scope'];
-	roboFactory.$inject = ['$http'];
+	roboFactory.$inject = ['$http','Restangular'];
+	//roboFactory.$inject = ['Restangular'];
 
 	 function roboFactory($http){
 console.log("roboCtrl loaded");
@@ -56,11 +63,16 @@ console.log("roboCtrl loaded");
 
 
 angular.module('robo')
-.controller('roboCtrl', ['roboFactory', function (roboFactory) {
+.controller('roboCtrl', ['roboFactory', 'Restangular', '$scope', function (roboFactory, Restangular, $scope) {
+
    // console.log(roboFactory);
   //  console.log($scope.data);
 	console.log("roboCtrl loaded")
-
+	Restangular.all('users').getList().then(function(result){
+		console.log(result);
+		$scope.users = result;
+	});
+	
 
 	var vm = this;
 

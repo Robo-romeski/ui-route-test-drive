@@ -5,7 +5,7 @@ var mockJson = require('../mock/users.json');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-	console.log(mockJson);
+//console.log(mockJson);
   res.send(mockJson);
 });
 

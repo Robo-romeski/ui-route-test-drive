@@ -73,24 +73,26 @@ angular.module('robo')
 // 	if(limited > 0){
 // 	$scope.limit -= limited;
 // };
+	
+	var vm = this;
 
-	$scope.loadAmount = 15;
+	vm.loadAmount = 15;
 
-	$scope.loadMore = function(){
-		$scope.loadAmount = $scope.loadAmount + 15;
+	vm.loadMore = function(){
+		vm.loadAmount = vm.loadAmount + 15;
 	}
 
-	$scope.loadLess = function(){
-		if($scope.loadAmount >= 15)
-		$scope.loadAmount = $scope.loadAmount - 15;
+	vm.loadLess = function(){
+		if(vm.loadAmount >= 15)
+		vm.loadAmount = vm.loadAmount - 15;
 	}
 
    // console.log(roboFactory);
-  //  console.log($scope.data);
+  //  console.log(vm.data);
 	console.log("roboCtrl loaded")
 	Restangular.all('posts').getList().then(function(result){
 		//console.log(result);
-		$scope.posts = result;
+		vm.posts = result;
 	});
 	
 

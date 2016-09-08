@@ -18,7 +18,7 @@ $stateProvider
 		url: '/users',
 		controller: "roboCtrl",
 		controllerAs: "app",
-		template: "<h3> from users state</h3>"
+		templateUrl: "../templates/users.view.html"
 
 	})
 	

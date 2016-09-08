@@ -3,12 +3,7 @@
 	<li>
 		<a ui-sref="app.users">users</a>
 		<a ui-sref="app.home">home</a>
-	</li><br>
-	<a href ng-click="loadMore()">more results</a>
-	<a href ng-click="loadLess()">less results</a><br><br>
-	<div ng-repeat="post in posts | limitTo: loadAmount">
-		<li class="animated fadeInLeft">{{post.title}}</li>
-	</div>
-	<!-- <li>{{users}}</li> -->
+	</li>
 </ul>
 <div ui-view></div>
+

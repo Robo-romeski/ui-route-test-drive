@@ -16,60 +16,60 @@ angular.module('robo')
 .run(function(){
 	console.log("running")
 })
-angular.module('robo')
-	.factory('roboFactory', roboFactory)
+// angular.module('robo')
+// 	.factory('roboFactory', roboFactory)
 
-	//roboFactory.$inject = ['$scope'];
-	roboFactory.$inject = ['$http','Restangular'];
-	//roboFactory.$inject = ['Restangular'];
+// 	//roboFactory.$inject = ['$scope'];
+// 	roboFactory.$inject = ['$http','Restangular'];
+// 	//roboFactory.$inject = ['Restangular'];
 
-	 function roboFactory($http){
-console.log("roboCtrl loaded");
-	 	var service = {
-	 		getUsers: getUsers
-	 	}
+// 	 function roboFactory($http){
+// console.log("roboCtrl loaded");
+// 	 	var service = {
+// 	 		getUsers: getUsers
+// 	 	}
 
-	 	return service;
-	 	function getUsers(){
-	 		var data = [{
-				"firstName": "Johnny",
-				"lastName": "Cage",
-				"profession":"Movie Star"
-			},
-			{
-				"firstName": "Jackson",
-				"lastName": "Briggs",
-				"profession":"Police Officer"
-			},
-			{
-				"firstName": "Shang",
-				"lastName": "Tsung",
-				"profession":"Wizard"
-			}]
-		return data;
-	 	}
+// 	 	return service;
+// 	 	function getUsers(){
+// 	 		var data = [{
+// 				"firstName": "Johnny",
+// 				"lastName": "Cage",
+// 				"profession":"Movie Star"
+// 			},
+// 			{
+// 				"firstName": "Jackson",
+// 				"lastName": "Briggs",
+// 				"profession":"Police Officer"
+// 			},
+// 			{
+// 				"firstName": "Shang",
+// 				"lastName": "Tsung",
+// 				"profession":"Wizard"
+// 			}]
+// 		return data;
+// 	 	}
 
- //        function getJson(){
-	// 	console.log("robo fac loaded");
-	// 	return $http.get('/mock/users.json');
-	// 	// .success(function(response){
-	// 	// console.log(response.data);
-	// 	// $scope.data = response.data;
-	// 	// });	
-	// }
-	}
+//  //        function getJson(){
+// 	// 	console.log("robo fac loaded");
+// 	// 	return $http.get('/mock/users.json');
+// 	// 	// .success(function(response){
+// 	// 	// console.log(response.data);
+// 	// 	// $scope.data = response.data;
+// 	// 	// });	
+// 	// }
+// 	}
 
 	
 
 
 angular.module('robo')
-.controller('roboCtrl', ['roboFactory', 'Restangular', '$scope', function (roboFactory, Restangular, $scope) {
+.controller('roboCtrl', [ 'Restangular', '$scope', function ( Restangular, $scope) {
 
    // console.log(roboFactory);
   //  console.log($scope.data);
 	console.log("roboCtrl loaded")
 	Restangular.all('users').getList().then(function(result){
-		console.log(result);
+		//console.log(result);
 		$scope.users = result;
 	});
 	
@@ -83,8 +83,8 @@ angular.module('robo')
      // 	console.log(error);
      // });
 
-     var users = roboFactory.getUsers();
-     console.log(users)
+     // var user = roboFactory.getUsers();
+     // console.log(user)
 
 
 

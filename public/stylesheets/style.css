@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Indie+Flower|Modak|Poiret+One|Slabo+27px);
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower|Modak|Poiret+One|Lobster|Slabo+27px);
 body {
   padding: 50px;
   font-family: "Poiret One", cursive; }
@@ -6,7 +6,7 @@ body {
     font-family: "Slabo 27px", serif; }
 
 h1 {
-  font-family: "Modak", cursive;
+  font-family: "Lobster", cursive;
   color: #167ac6; }
 
 a {

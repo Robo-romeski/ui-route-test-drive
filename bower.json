@@ -1,0 +1,14 @@
+{
+  "name": "romeapi",
+  "description": "getting to know tech project",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/Robo-romeski/ui-route-test-drive",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

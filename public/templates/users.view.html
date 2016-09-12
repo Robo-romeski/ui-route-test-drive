@@ -2,7 +2,7 @@
 
 	<a href ng-click="app.loadMore()">more results</a>
 	<a href ng-click="app.loadLess()">less results</a><br><br>
-	<div ng-repeat="post in app.posts | limitTo: app.loadAmount">
-		<li class="animated bounceInLeft">{{post.title}}</li>
+	<div>
+		<li ng-repeat="post in app.posts | limitTo: app.loadAmount" class="animated bounceInLeft">{{post.title}}</li>
 	</div>
 	<!-- <li>{{users}}</li> -->

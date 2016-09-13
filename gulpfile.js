@@ -9,6 +9,10 @@ var browserSync = require('browser-sync').create();
 var gutil = require('gulp-util');
 var jshint = require('gulp-jshint');
 var rename = require('gulp-rename');
+var livereload = require('gulp-livereload');
+var notify = require('gulp-notify');
+var lr = require('tiny-lr')
+var server = lr();
 
 var config = {
 
@@ -41,7 +45,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('scripts', function() {
-  return gulp.src('src/scripts/**/*.js')
+  return gulp.src(paths.js)
     //.pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
     .pipe(concat('main.js'))

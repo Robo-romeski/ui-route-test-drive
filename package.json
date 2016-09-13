@@ -16,11 +16,20 @@
     "morgan": "~1.7.0",
     "sass": "^0.5.0",
     "serve-favicon": "~2.3.0",
-    "ui-router": "^1.0.0-alpha.3"
+    "ui-router": "^1.0.0-alpha.3",
+    "wiredep": "^4.0.0"
   },
   "devDependencies": {
+    "browser-sync": "^2.15.0",
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
     "gulp-inject": "^4.1.0",
-    "gulp-sass": "^2.3.2"
+    "gulp-jshint": "^2.0.1",
+    "gulp-minify": "0.0.14",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.9.3"
   }
 }

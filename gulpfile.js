@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var inject = require('gulp-inject');
-var wiredep = require('wiredep').stream;
+var wiredep = require('wiredep');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var minify = require('gulp-minify');
@@ -15,6 +15,7 @@ var minifycss = require('gulp-minify-css');
 var lr = require('tiny-lr')
 var server = lr();
 
+console.log(wiredep);
 
 var paths = {
 	sass: "public/stylesheets/*.sass",
@@ -22,14 +23,14 @@ var paths = {
 };
 //wiredep 
 gulp.task('wiredep', function(){
-
+wiredep({src:'public/index.html',directory:'bower_components'});
 });
 
 gulp.task('index', function(){
-var target = gulp.src('public/index.html');
-var sources = gulp.src(['dist/scripts/*.js.min', 'dist/styles/*.css.min'], {read:false});
+var target = gulp.src('./public/index.html');
+var sources = gulp.src(['./dist/scripts/*.js', './dist/styles/*.css']);
 
-return target.pipe(inject(sources)).pipe(gulp.dest('public'));
+return target.pipe(inject(sources)).pipe(gulp.dest('./public'));
 
 });
 
